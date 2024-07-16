@@ -25,8 +25,8 @@ class AudioWidget extends StatelessWidget {
             orElse: () => false,
           );
 
-          return Padding(
-            padding: const EdgeInsets.only(top: 10.0, left: 50.0),
+          return Align(
+            alignment: Alignment.center,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

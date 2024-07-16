@@ -19,13 +19,13 @@ class ChatPageBloc extends Bloc<ChatPageEvent, ChatPageState> {
           questionId: 2,
           question: "give me another date",
           type: "Options",
-          options: ["option1","option2","option3" ],
+          options: ["option1","option2","option3"],
           defaultValue: "this is default value",
           response: ""),
       const QuestionsModel(
           questionId: 3,
           question: "what is your date of birth ?",
-          type: "Audio",
+          type: "Date",
           defaultValue: "this is default value",
           response: ""),
       const QuestionsModel(

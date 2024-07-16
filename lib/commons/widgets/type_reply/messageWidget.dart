@@ -5,14 +5,14 @@ import 'package:chatbot/data/models/questionModel/questionModel.dart';
 import 'package:chatbot/screens/chat_page/bloc/chat_page_bloc.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class NumberWidget extends StatelessWidget {
+class MessageWidget extends StatelessWidget {
   final QuestionsModel question;
 
-  NumberWidget({required this.question});
+  MessageWidget({required this.question});
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController _controller = TextEditingController(text: question.defaultValue);
+    TextEditingController _controller = TextEditingController();
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,14 +21,11 @@ class NumberWidget extends StatelessWidget {
           padding: const EdgeInsets.only(top:26.0),
           child: TextField(
             controller: _controller,
-            keyboardType: TextInputType.number,
-            inputFormatters: <TextInputFormatter>[
-              FilteringTextInputFormatter.digitsOnly,
-            ],
+            keyboardType: TextInputType.text,
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
-              hintText: 'Enter a number',
+              hintText: 'Your answer goes in here...',
               contentPadding: const EdgeInsets.symmetric(horizontal: 40,vertical: 10),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20.0),
