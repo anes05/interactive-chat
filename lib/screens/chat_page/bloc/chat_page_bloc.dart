@@ -25,7 +25,7 @@ class ChatPageBloc extends Bloc<ChatPageEvent, ChatPageState> {
       const QuestionsModel(
           questionId: 3,
           question: "what is your date of birth ?",
-          type: "Date",
+          type: "Video",
           defaultValue: "this is default value",
           response: ""),
       const QuestionsModel(

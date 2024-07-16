@@ -26,7 +26,7 @@ class AudioWidget extends StatelessWidget {
           );
 
           return Align(
-            alignment: Alignment.center,
+            alignment: Alignment.bottomRight,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [

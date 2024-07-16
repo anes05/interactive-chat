@@ -13,29 +13,32 @@ class ImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final ImagePicker _picker = ImagePicker();
 
-    return Padding(
-      padding: const EdgeInsets.only(top: 10.0, left: 50.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10.0, top: 6.0),
-            child: ElevatedButton.icon(
-              icon: const Icon(Icons.camera_alt),
-              label: const Text('Take Photo'),
-              onPressed: () async {
-                final XFile? photo =
-                await _picker.pickImage(source: ImageSource.camera);
-                if (photo != null) {
-                  String pathToPhoto = photo.path;
-                  String response = "Photo saved successfully at $pathToPhoto";
-                  context.read<ChatPageBloc>()
-                      .add(ChatPageEvent.submitResponse(response: response));
-                }
-              },
+    return Align(
+      alignment: Alignment.bottomRight,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 10.0, left: 50.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 10.0, top: 6.0),
+              child: ElevatedButton.icon(
+                icon: const Icon(Icons.camera_alt),
+                label: const Text('Take Photo'),
+                onPressed: () async {
+                  final XFile? photo =
+                  await _picker.pickImage(source: ImageSource.camera);
+                  if (photo != null) {
+                    String pathToPhoto = photo.path;
+                    String response = "Photo saved successfully at $pathToPhoto";
+                    context.read<ChatPageBloc>()
+                        .add(ChatPageEvent.submitResponse(response: response));
+                  }
+                },
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
